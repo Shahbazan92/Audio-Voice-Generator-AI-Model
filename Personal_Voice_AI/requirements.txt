@@ -1,0 +1,24 @@
+# ---------------------------------------------------------------------------
+# FULL stack: UI + audio + PyTorch (CPU build) + Coqui XTTS-v2.
+# This is what Streamlit Community Cloud and `pip install -r requirements.txt` use.
+# The first line makes pip/uv download the small CPU-only PyTorch instead of the
+# multi-GB CUDA build. For an NVIDIA GPU use requirements-xtts.txt (see README).
+# If you only want the light UI + remote GPU server, use requirements-light.txt.
+# NOTE: pins could not be install-tested by the author (no network in the build sandbox).
+# ---------------------------------------------------------------------------
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+streamlit>=1.40,<2
+numpy>=1.24,<3
+scipy>=1.10,<2
+soundfile>=0.12.1,<0.14
+librosa>=0.10.2,<0.12
+noisereduce>=3.0,<4
+imageio-ffmpeg>=0.5.1,<1
+requests>=2.31,<3
+psutil>=5.9,<8
+
+torch>=2.4,<2.9
+torchaudio>=2.4,<2.9
+coqui-tts>=0.25.3,<0.28
+transformers>=4.43,<5
